@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>SALUT</pattern>
+        <template>
+            <random>
+                <li>Hei! Cu ce-ti pot fi de folos?</li>
+                <li>Salut! Intreaba-ma orice despre situatia ta!</li>
+                <li>Salutare! Sunt MimoBot!</li>
+                <li>Buna! Cu ce te pot ajuta?</li>
+            </random>
+        </template>
+    </category>
+    <category>
+        <pattern>BUNA</pattern>
+        <template>
+            <srai>SALUT</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HEI</pattern>
+        <template>
+            <srai>SALUT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SUNT *</pattern>
+        <template>Buna,
+            <set name="name">
+                <star/>
+            </set>
+            !
+        </template>
+    </category>
+    <category>
+        <pattern>CINE SUNT</pattern>
+        <template>Buna! Esti
+            <get name="name"></get>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* AI FOST INTEGRALIST</pattern>
+        <template>_INTEGRALIST_</template>
+    </category>
+
+    <category>
+        <pattern>IN CE ANI AI RESTANTE</pattern>
+        <template>_RESTANTEANI_</template>
+    </category>
+    <category>
+        <pattern>DIN CE ANI AI * RESTANTE</pattern>
+        <template>
+            <srai>IN CE ANI AI RESTANTE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* ANI AI * RESTANTA</pattern>
+        <template>
+            <srai>IN CE ANI AI RESTANTE</srai>
+        </template>
+    </category>
+     <category>
+        <pattern>IN CE SEMESTRE AI RESTANTE</pattern>
+        <template>_RESTANTESEM_</template>
+    </category>
+    <category>
+        <pattern>* CE SEMESTRE AI * RESTANTE</pattern>
+        <template>
+            <srai>IN CE SEMESTRE AI RESTANTE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* CE SEMESTRU AI * RESTANTE</pattern>
+        <template>
+            <srai>IN CE SEMESTRE AI RESTANTE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SUNT MATERIILE * PREFERATE</pattern>
+        <template>_MATERIIPREFERATE_</template>
+    </category>
+
+    <category>
+        <pattern>* MATERII * ANUL ACESTA</pattern>
+        <template>_MATERIIANCURENT_</template>
+    </category>
+    <category>
+        <pattern>* MATERIILE * ANUL ACESTA</pattern>
+        <template>
+            <srai>* MATERII * ANUL ACESTA</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* MATERIILE * ANUL ASTA</pattern>
+        <template>
+            <srai>* MATERII * ANUL ACESTA</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* MATERII * ANUL ASTA</pattern>
+        <template>
+            <srai>* MATERII * ANUL ACESTA</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>CE RESTANTE AI</pattern>
+        <template>_ENUMERARERESTANTE_</template>
+    </category>
+    <category>
+        <pattern>* MATERIILE * RESTANTE</pattern>
+        <template>
+            <srai>CE RESTANTE AI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* MATERIILE * RESTANTA</pattern>
+        <template>
+            <srai>CE RESTANTE AI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* RESTANTE * SEMESTRUL * ANUL *</pattern>
+        <template>~M~R~S<star index="3"/>~A
+            <star index="4"/>
+        </template>
+    </category>
+    <category>
+        <pattern>* RESTANTE * ANUL * SEMESTRUL *</pattern>
+        <template>~M~R~S<star index="4"/>~A
+            <star index="3"/>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern>* PROFESOR * LICENTA *</pattern>
+        <template>Profesorul meu indrumator de licenta este Conf. dr. Alboaie Lenuta</template>
+        <!--<set name = "topic">licenta</set>-->
+    </category>
+
+    <category>
+        <pattern>* PROFESORUL * LICENTA *</pattern>
+        <template>
+            <srai>PROFESOR * LICENTA</srai>
+        </template>
+        <!--<set name = "topic">licenta</set>-->
+    </category>
+
+    <category>
+        <pattern>* MATERIA * NOTA CEA MAI MARE * FIECARE SEMESTRU</pattern>
+        <template>In anul 1, semestrul 1: Introducere in programare - 10, semestrul 2: Programare Orientata Obiect - 9,
+            in anul 2, semestrul 1
+        </template>
+        <!--<set name = "topic">materii</set>-->
+    </category>
+
+    <category>
+        <pattern>CARE ESTE MATERIA CU NOTA CEA MAI MICA DIN FIECARE SEMESTRU</pattern>
+        <template>~MATERIE : NOTA WORST S=TOATE</template>
+        <!--<set name = "topic">materii</set>-->
+    </category>
+
+    <category>
+        <pattern>CE MATERII OPTIONALE AI AVUT</pattern>
+        <template>~MATERII OPTIONALE</template>
+        <set name="topic">optionale</set>
+    </category>
+    <topic name="optionale">
+        <category>
+            <pattern>CE NOTE AI AVUT</pattern>
+            <template>~NOTE OPTIONALE</template>
+        </category>
+
+        <category>
+            <pattern>CE NOTA AI AVUT LA *</pattern>
+            <template>~NOTA OPTIONAL
+                <star/>
+            </template>
+        </category>
+
+    </topic>
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>What was that?</li>
+                <li>I don’t understand</li>
+                <li>Can you say that more clearly?</li>
+                <li>I have no answer for that.🙁</li>
+            </random>
+        </template>
+    </category>
+
+
+</aiml>

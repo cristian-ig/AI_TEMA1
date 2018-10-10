@@ -159,9 +159,34 @@
     </category>
 
     <category>
-        <pattern>CARE ESTE MATERIA CU NOTA CEA MAI MICA DIN FIECARE SEMESTRU</pattern>
-        <template>~MATERIE : NOTA WORST S=TOATE</template>
+        <pattern>CARE ESTE MATERIA CU NOTA CEA MAI * DIN FIECARE *</pattern>
+        <template>_MATERIACUNOTACEAMAI<star/>DINFIECARE<star index="2"/>_</template>
         <!--<set name = "topic">materii</set>-->
+    </category>
+
+
+
+
+
+
+    <category>
+        <pattern>CARE ESTE CEA MAI * NOTA A TA DIN FIECARE *</pattern>
+        <template>_CEAMAI<star/>NOTADINFIECARE<star index="2"/>_</template>
+    </category>
+
+    <category>
+        <pattern>CARE A FOST CEA MAI * NOTA A TA DIN FIECARE *</pattern>
+        <template><srai>CARE ESTE CEA MAI <star/> NOTA A TA DIN FIECARE <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>CARE ESTE CEA MAI * NOTA</pattern>
+        <template>_CEAMAI<star/>NOTA_</template>
+    </category>
+
+     <category>
+        <pattern>CARE ESTE CEA MAI * NOTA A TA</pattern>
+        <template><srai>CARE ESTE CEA MAI <star/> NOTA</srai></template>
     </category>
 
     <category>
@@ -169,6 +194,7 @@
         <template>~MATERII OPTIONALE</template>
         <set name="topic">optionale</set>
     </category>
+
     <topic name="optionale">
         <category>
             <pattern>CE NOTE AI AVUT</pattern>
